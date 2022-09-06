@@ -20,4 +20,14 @@ describe("Todo app", () => {
   it("Should be accessible", () => {
     cy.checkA11y();
   });
+
+  it("Should still be accessible after adding todos", () => {
+    cy.get('.input').type('First TODO')
+    cy.get('[type="submit"]').click()
+
+    cy.get('.input').type('Another TODO')
+    cy.get('[type="submit"]').click()
+
+    cy.checkA11y();
+  });
 });
