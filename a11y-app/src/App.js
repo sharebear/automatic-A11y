@@ -4,7 +4,7 @@ import './App.css';
 
 function Todo({ todo, index, markTodo, removeTodo }) {
   return (
-    <div
+    <li
       className="todo"
       
     >
@@ -13,7 +13,7 @@ function Todo({ todo, index, markTodo, removeTodo }) {
         <button className="outline-success" onClick={() => markTodo(index)}>✓</button>{' '}
         <button className="outline-danger" onClick={() => removeTodo(index)}>✕</button>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -68,7 +68,7 @@ function App() {
       <header className="App-header">
         <h3>TODO List </h3>
         <FormTodo addTodo={addTodo} />
-        <img src={logo} className="App-logo" />
+        <img src={logo} className="App-logo" alt="Spinning React logo" />
         <div>
           <ul>
           {todos.map((todo, index) => (
